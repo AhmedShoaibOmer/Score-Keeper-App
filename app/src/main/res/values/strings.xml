@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Football Score Keeper</string>
+    <string name="team_a">Team A</string>
+    <string name="team_b">Team B</string>
+    <string name="default_score_value">0</string>
+    <string name="goal">Goal</string>
+    <string name="yellow_card">Yellow Card</string>
+    <string name="red_card">Red Card</string>
+    <string name="reset">Reset</string>
 </resources>

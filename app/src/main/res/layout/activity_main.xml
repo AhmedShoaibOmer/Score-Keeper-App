@@ -6,13 +6,218 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/teamARedCardsBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
+        android:id="@+id/teamA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="@string/team_a"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/teamB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/team_b"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/divider"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/teamAGoals"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/default_score_value"
+        android:textColor="@android:color/black"
+        android:textSize="96sp"
+        app:layout_constraintDimensionRatio=""
+        app:layout_constraintEnd_toStartOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teamA" />
+
+    <TextView
+        android:id="@+id/teamBGoals"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/default_score_value"
+        android:textColor="@android:color/black"
+        android:textSize="96sp"
+        app:layout_constraintDimensionRatio=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/teamB" />
+
+    <TextView
+        android:id="@+id/teamAYellowCards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:text="@string/default_score_value"
+        android:textColor="#FFEB3B"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toStartOf="@+id/teamARedCards"
+        app:layout_constraintStart_toStartOf="@+id/teamAGoals"
+        app:layout_constraintTop_toBottomOf="@id/teamAGoals" />
+
+    <TextView
+        android:id="@+id/teamARedCards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:gravity="center"
+        android:text="@string/default_score_value"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="@+id/teamAGoals"
+        app:layout_constraintStart_toEndOf="@+id/teamAYellowCards"
+        app:layout_constraintTop_toBottomOf="@id/teamAGoals" />
+
+    <TextView
+        android:id="@+id/teamBYellowCards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:text="@string/default_score_value"
+        android:textColor="#FFEB3B"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toStartOf="@+id/teamBRedCards"
+        app:layout_constraintStart_toStartOf="@+id/teamBGoals"
+        app:layout_constraintTop_toBottomOf="@id/teamBGoals" />
+
+    <TextView
+        android:id="@+id/teamBRedCards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:gravity="center"
+        android:text="@string/default_score_value"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="@id/teamBGoals"
+        app:layout_constraintStart_toEndOf="@+id/teamBYellowCards"
+        app:layout_constraintTop_toBottomOf="@id/teamBGoals" />
+
+    <Button
+        android:id="@+id/teamAGoalBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="@string/goal"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toStartOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teamAYellowCards" />
+
+    <Button
+        android:id="@+id/teamAYellowCardsBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#FFEB3B"
+        android:text="@string/yellow_card"
+        android:textColor="@android:color/primary_text_light_nodisable"
+        app:layout_constraintEnd_toStartOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teamAGoalBtn" />
+
+    <Button
+        android:id="@+id/teamARedCardsBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:text="@string/red_card"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toStartOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teamAYellowCardsBtn" />
+
+    <Button
+        android:id="@+id/teamBGoalBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="@string/goal"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/teamBYellowCards" />
+
+    <Button
+        android:id="@+id/teamBYellowCardsBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#FFEB3B"
+        android:text="@string/yellow_card"
+        android:textColor="@android:color/primary_text_light_nodisable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/teamBGoalBtn" />
+
+    <Button
+        android:id="@+id/teamBRedCardsBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:text="@string/red_card"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider"
+        app:layout_constraintTop_toBottomOf="@+id/teamBYellowCardsBtn" />
+
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="@string/reset"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
